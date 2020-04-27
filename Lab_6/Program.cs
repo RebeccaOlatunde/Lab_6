@@ -13,59 +13,62 @@ namespace Lab_6
 
             //Declaring variables
 
-            string response; 
+            string response;
             string sides;
             int sides1;
             bool isItANum;
             int diceRoll = 0;
 
 
-           Console.WriteLine("Welcome to GrandCircus Casino. Roll the dice (y/n?)");
-           response = Console.ReadLine().ToLower();
-           while (response == "y") ; 
-
-            Console.WriteLine("How many sides does each dice have?"); //Enter 6
-            sides = Console.ReadLine();
-            isItANum = int.TryParse(sides, out sides1);
-
-                  // Dice Roll Prompt
-            do
+            Console.WriteLine("Welcome to GrandCircus Casino. Roll the dice (y/n?)");
+            response = Console.ReadLine().ToLower();
+            while (response! == "y")
             {
-               Console.WriteLine("Roll");
 
-               diceRoll = rnd.Next(6);
-               Dice1[diceRoll]++;
-               Console.WriteLine("Dice1: {0}", diceRoll + 1);
 
-               diceRoll = rnd.Next(6);
-               Dice1[diceRoll]++;
-               Console.WriteLine("Dice2: {0}", diceRoll + 1);
+                Console.WriteLine("How many sides does each dice have?"); //Enter 6
+                sides = Console.ReadLine();
+                isItANum = int.TryParse(sides, out sides1);
 
-                   // Subsequent Dice Roll
+                // Dice Roll Prompt
+                do
+                {
+                    Console.WriteLine("Roll");
 
-               Console.WriteLine("Roll Dice again? (y/n?)");
+                    diceRoll = rnd.Next(6);
+                    Dice1[diceRoll]++;
+                    Console.WriteLine("Dice1: {0}", diceRoll + 1);
 
-               response = Console.ReadLine().ToLower();
+                    diceRoll = rnd.Next(6);
+                    Dice1[diceRoll]++;
+                    Console.WriteLine("Dice2: {0}", diceRoll + 1);
 
-            } while (response == "y") ;
+                    // Subsequent Dice Roll
+
+                    Console.WriteLine("Roll Dice again? (y/n?)");
+
+                    response = Console.ReadLine().ToLower();
+
+                } while (response == "y");
                 Console.WriteLine("GoodBye");
                 Console.ReadLine();
 
 
-           // Welcome to GrandCircus Casino. Roll the dice(y/n?)
-           // Response: y
-           // How many sides does each dice have?
-           // Response: 6
-           // Roll
-           // Dice1: 5 (number randomly chosen ny app)
-           // Dice2: 4 (number randomly chosen by app)
-           // Roll Dice again? (y/n?)
-           // If "y" it continues, if "n" then Goodbye.
+                // Welcome to GrandCircus Casino. Roll the dice(y/n?)
+                // Response: y
+                // How many sides does each dice have?
+                // Response: 6
+                // Roll
+                // Dice1: 5 (number randomly chosen ny app)
+                // Dice2: 4 (number randomly chosen by app)
+                // Roll Dice again? (y/n?)
+                // If "y" it continues, if "n" then Goodbye.
 
 
-         }   
+            }
+        } 
     }
 }    
 
 
-       
+        
