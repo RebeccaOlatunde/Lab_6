@@ -8,8 +8,6 @@ namespace Lab_6
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            int[] Dice1 = new int[6];
-            int[] Dice2 = new int[6];
 
             //Declaring variables
 
@@ -21,26 +19,24 @@ namespace Lab_6
 
 
             Console.WriteLine("Welcome to GrandCircus Casino. Roll the dice (y/n?)");
-            response = Console.ReadLine().ToLower();
-            while (response! == "y")
+            response = Console.ReadLine().ToLower().Trim();
+            while (response == "y")
             {
 
-
-                Console.WriteLine("How many sides does each dice have?"); //Enter 6
+                do
+                {
+                    Console.WriteLine("How many sides does each dice have?"); 
                 sides = Console.ReadLine();
                 isItANum = int.TryParse(sides, out sides1);
 
                 // Dice Roll Prompt
-                do
-                {
+                
                     Console.WriteLine("Roll");
 
-                    diceRoll = rnd.Next(6);
-                    Dice1[diceRoll]++;
+                    diceRoll = rnd.Next(sides1);
                     Console.WriteLine("Dice1: {0}", diceRoll + 1);
 
-                    diceRoll = rnd.Next(6);
-                    Dice1[diceRoll]++;
+                    diceRoll = rnd.Next(sides1);
                     Console.WriteLine("Dice2: {0}", diceRoll + 1);
 
                     // Subsequent Dice Roll
@@ -57,7 +53,7 @@ namespace Lab_6
                 // Welcome to GrandCircus Casino. Roll the dice(y/n?)
                 // Response: y
                 // How many sides does each dice have?
-                // Response: 6
+                // Response: Enter 6 or any number of choice
                 // Roll
                 // Dice1: 5 (number randomly chosen ny app)
                 // Dice2: 4 (number randomly chosen by app)
@@ -69,6 +65,3 @@ namespace Lab_6
         } 
     }
 }    
-
-
-        
